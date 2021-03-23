@@ -1,6 +1,6 @@
 // Nettoyage de la BD
-MATCH (n) DETACH
-DELETE n;
+MATCH (n) 
+DETACH DELETE n;
 
 // Création des noeuds
 LOAD CSV WITH HEADERS FROM 'file:///dataset.csv' AS line
