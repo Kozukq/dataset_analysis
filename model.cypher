@@ -10,7 +10,7 @@ WHERE line.Developer IS NOT NULL
 AND line.Publisher IS NOT NULL 
 AND line.Platform IS NOT NULL 
 AND line.Genre IS NOT NULL
-CREATE (game:Game {name: line.Name, year: line.Year_of_Release, sales: line.Global_Sales, score: line.Critic_Score})
+CREATE (game:Game {name: line.Name, year: toInteger(line.Year_of_Release), sales: toFloat(line.Global_Sales), score: toInteger(line.Critic_Score)})
 MERGE (dev:Developer {name: line.Developer})
 MERGE (pub:Publisher {name: line.Publisher})
 MERGE (plat:Platform {name: line.Platform})
